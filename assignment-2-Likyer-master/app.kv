@@ -1,0 +1,97 @@
+# Create your Kivy layout in the kv language here
+BoxLayout:
+    id: main_layout
+    orientation: 'horizontal'
+    BoxLayout:
+        id: search_layout
+        orientation: 'vertical'
+        size_hint_x: None
+        width: 300
+
+        Label:
+            text: 'Sort by:'
+            size_hint_y: None
+            height: 120
+            halign: 'center'
+            valign: 'middle'
+
+        Spinner:
+            id: key_sp
+            text: 'Author'
+            size_hint_y: None
+            height: 120
+            values: 'Author', 'Title', 'Number of Pages'
+            on_text: app.sort_books()
+
+        Label:
+            text: 'Add new book...'
+            size_hint_y: None
+            height: 120
+            halign: 'center'
+            valign: 'middle'
+
+        Label:
+            text: 'Title'
+            size_hint_y: None
+            height: 120
+            halign: 'center'
+            valign: 'middle'
+
+        TextInput:
+            id: title_input
+            size_hint_y: None
+            height: 110
+            halign: 'center'
+            valign: 'middle'
+
+        Label:
+            text: 'Author'
+            size_hint_y: None
+            height: 110
+            halign: 'center'
+            valign: 'middle'
+
+        TextInput:
+            id: author_input
+            size_hint_y: None
+            height: 110
+            halign: 'center'
+            valign: 'middle'
+
+        Label:
+            text: 'Pages'
+            size_hint_y: None
+            height: 110
+            halign: 'center'
+            valign: 'middle'
+
+        TextInput:
+            id: pages_input
+            size_hint_y: None
+            height: 110
+            halign: 'center'
+            valign: 'middle'
+
+        Button:
+            id: add_btn
+            text: 'Add Book'
+            size_hint_y: None
+            height: 90
+            halign: 'center'
+            valign: 'middle'
+            on_press: app.press_add()
+
+        Button:
+            id: clear_btn
+            text: 'Clear'
+            size_hint_y: None
+            height: 90
+            halign: 'center'
+            valign: 'middle'
+            on_press: app.press_clear()
+
+    BoxLayout:
+        id: book_layout
+        orientation: 'vertical'
+        size_hint_x: 1
+        size_hint_y: 1
